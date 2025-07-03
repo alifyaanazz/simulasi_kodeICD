@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Simulasi Koding Diagnosa & Tindakan</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    :root {
+      --hijau-pastel: #e6f4ea;
+      --cokelat-milo: #8b5e3c;
+      --putih: #ffffff;
+      --gray-light: #f7f7f7;
+      --gray-dark: #555;
+      --font: 'Segoe UI', sans-serif;
+    }
+
+    body {
+      font-family: var(--font);
+      background-color: var(--hijau-pastel);
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 40px auto;
+      background-color: var(--putih);
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      overflow: hidden;
+    }
+
+    header {
+      background-color: var(--cokelat-milo);
+      color: white;
+      padding: 20px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo-title {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .logo-title img {
+      height: 55px;
+    }
+
+    .title {
+      font-size: 22px;
+      font-weight: bold;
+      line-height: 1.2;
+    }
+
+    .subtitle {
+      font-size: 14px;
+      font-weight: 400;
+      margin-top: 4px;
+      color: #f0e9e0;
+    }
+
+    .section {
+      padding: 30px;
+      border-bottom: 1px solid #eee;
+    }
+
+    .section:last-child {
+      border-bottom: none;
+    }
+
+    h2 {
+      margin-top: 0;
+      color: var(--cokelat-milo);
+    }
+
+    .readonly-block {
+      background: var(--gray-light);
+      border-left: 4px solid var(--cokelat-milo);
+      padding: 15px 20px;
+      margin-bottom: 20px;
+      border-radius: 6px;
+    }
+
+    .readonly-block h3 {
+      margin: 0 0 5px;
+      font-size: 16px;
+      color: var(--gray-dark);
+    }
+
+    .readonly-block p {
+      margin: 0;
+      color: #333;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    label {
+      font-weight: bold;
+      display: block;
+      margin-bottom: 5px;
+      color: #333;
+    }
+
+    input[type="text"], textarea {
+      width: 100%;
+      padding: 10px;
+      font-size: 15px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    button {
+      background-color: var(--cokelat-milo);
+      color: white;
+      padding: 12px 24px;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #6f4229;
+    }
+
+    footer {
+      text-align: center;
+      font-size: 13px;
+      padding: 15px;
+      background: #fafafa;
+      color: #999;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <header>
+      <div class="logo-title">
+        <img src="logohimarsika-removebg-preview.png" alt="Logo HIMARSIKA">
+        <div>
+          <div class="title">Simulasi Koding Rekam Medis<br>by HIMARSIKA</div>
+          <div class="subtitle">Program Studi Rekam Medis & Informasi Kesehatan</div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Data Rekam Medis -->
+    <div class="section">
+      <h2>🔒 Data Rekam Medis (Readonly)</h2>
+
+      <div class="readonly-block">
+        <h3>Anamnesa Dokter</h3>
+        <p>Pasien mengeluhkan demam tinggi, mual, dan nyeri tekan di perut kanan bawah selama 3 hari.</p>
+      </div>
+
+      <div class="readonly-block">
+        <h3>Terapi Obat</h3>
+        <p>Paracetamol 500 mg 3x sehari, Cefixime 200 mg 2x sehari selama 7 hari.</p>
+      </div>
+
+      <div class="readonly-block">
+        <h3>Hasil Laboratorium</h3>
+        <p>Leukosit: 16.500/mm³, CRP meningkat, USG menunjukkan penebalan dinding usus buntu.</p>
+      </div>
+
+      <div class="readonly-block">
+        <h3>Diagnosa Utama</h3>
+        <p>Apendisitis akut</p>
+      </div>
+
+      <div class="readonly-block">
+        <h3>Tindakan</h3>
+        <p>Apendektomi laparoskopik</p>
+      </div>
+    </div>
+
+    <!-- Simulasi Form Koding -->
+    <div class="section">
+      <h2>✍️ Simulasi Koding ICD</h2>
+
+      <form action="thankyou.html" method="get">
+        <div class="form-group">
+          <label>Kode ICD-10 (Diagnosa Utama)</label>
+          <input type="text" name="icd10_utama" placeholder=>
+        </div>
+
+        <div class="form-group">
+          <label>Kode ICD-10 (Diagnosa Sekunder)</label>
+          <input type="text" name="icd10_sekunder" placeholder=>
+        </div>
+
+        <div class="form-group">
+          <label>Kode ICD-9 (Tindakan)</label>
+          <input type="text" name="icd9_tindakan" placeholder=>
+        </div>
+
+        <button type="submit">Simulasikan Kode</button>
+      </form>
+    </div>
+
+    <footer>
+      © 2025 HIMARSIKA Medika – Program Studi Rekam Medis & Informasi Kesehatan
+    </footer>
+  </div>
+
+</body>
+</html>
